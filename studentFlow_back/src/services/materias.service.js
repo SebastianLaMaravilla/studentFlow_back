@@ -86,3 +86,8 @@ export async function removeMateria(id, userId) {
   await getMateriaById(id, userId);
   await materiasRepository.deleteMateria(id, userId);
 }
+
+export async function listEventosByMateria(id, userId) {
+  await getMateriaById(id, userId);
+  return materiasRepository.findEventosByMateriaAndUserId(id, userId);
+}
